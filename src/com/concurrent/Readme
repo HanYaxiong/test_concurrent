@@ -1,0 +1,4 @@
+Queue
+    ConcurrentLinkedQueue       // 并发加锁的队列
+
+    BlockingQueue       // 阻塞式的队列

@@ -14,6 +14,7 @@ public class T {
 
     public void m() {
         for (int i = 0; i < 10000; i++) {
+            // get(), incrementAndGet()两个方法执行不是原子性的故导致结果的不确定性
             if (count.get() < 1000){
                 count.incrementAndGet();
             }

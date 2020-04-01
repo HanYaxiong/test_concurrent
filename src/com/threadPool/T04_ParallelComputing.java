@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
+/**
+ * 任务拆分执行, 对比多线程和单线程的执行速度
+ */
 public class T04_ParallelComputing {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         long start = System.currentTimeMillis();
@@ -18,9 +21,9 @@ public class T04_ParallelComputing {
 
         ExecutorService service = Executors.newFixedThreadPool(4);
         Future<List<Integer>> f1 = service.submit(task1);
-        Future<List<Integer>> f2 = service.submit(task1);
-        Future<List<Integer>> f3 = service.submit(task1);
-        Future<List<Integer>> f4 = service.submit(task1);
+        Future<List<Integer>> f2 = service.submit(task2);
+        Future<List<Integer>> f3 = service.submit(task3);
+        Future<List<Integer>> f4 = service.submit(task4);
 
         start = System.currentTimeMillis();
         f1.get();
@@ -40,7 +43,7 @@ public class T04_ParallelComputing {
         }
 
         @Override
-        public List<Integer> call() throws Exception {
+        public List<Integer> call() {
             return getPrime(startPos, endPos);
         }
     }

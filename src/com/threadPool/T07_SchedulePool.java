@@ -5,6 +5,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 执行定时任务的线程池
+ */
 public class T07_SchedulePool {
     public static void main(String[] args) {
         ScheduledExecutorService service = Executors.newScheduledThreadPool(4);

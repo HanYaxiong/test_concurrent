@@ -27,6 +27,7 @@ public class T09_ForkJoinPool {
         System.in.read();
     }
 
+    // 没有返回值
     /*static class AddTask extends RecursiveAction {
         int start, end;
         AddTask(int s, int e){
@@ -52,6 +53,7 @@ public class T09_ForkJoinPool {
         }
     }*/
 
+    // 有返回值
     static class AddTask extends RecursiveTask<Long> {
         int start, end;
         AddTask(int s, int e){

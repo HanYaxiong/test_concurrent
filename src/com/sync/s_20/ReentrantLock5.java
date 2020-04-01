@@ -33,7 +33,10 @@ public class ReentrantLock5 extends Thread {
         for (int i = 0; i < 100; i++) {
             lock.lock();
             try {
+                Thread.sleep(1);
                 System.out.println(Thread.currentThread().getName() + "获得锁");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             } finally {
                 lock.unlock();
             }
